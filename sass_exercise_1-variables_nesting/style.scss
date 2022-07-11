@@ -1,25 +1,28 @@
 $border: 1px solid;
+$color-red: red;
+$color-blue: blue;
+$color-green: green;
 
 body {
     width: 100vw;
 }
 
 div {
-    border: $border red;
+    border: $border $color-red;
     padding: 20px;
     text-align: center;
 
     h1 {
-        color: green;
+        color: $color-green;
         font-size: 1.5em;
-        text-decoration: underline blue;
+        text-decoration: underline $color-blue;
     }
 
     section {
         display: flex;
 
         article {
-            border: $border green;
+            border: $border $color-green;
         }
 
 
@@ -27,12 +30,12 @@ div {
 
     article:nth-child(1),
     article:nth-child(3) {
-        color: blue;
+        color: $color-blue;
     }
 
 }
 
 article:nth-child(2),
 article:nth-child(4) {
-    color: red;
+    color: $color-red;
 }
