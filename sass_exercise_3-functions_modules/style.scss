@@ -1,0 +1,46 @@
+@use "var";
+@use "rem";
+
+@mixin articles($text-color, $border-color, $font-size) {
+    color: $text-color;
+    border: 1px solid $border-color;
+    font-size: $font-size;
+    width: 100%;
+    padding: 10px;
+}
+
+body {
+    width: 100vw;
+}
+
+div {
+
+    border: 1px solid var.$color-red;
+    text-align: center;
+
+    h1 {
+        color: var.$color-green;
+        text-decoration: underline var.$color-blue;
+    }
+
+    section {
+        display: flex;
+        margin: 10px;
+        justify-content: center;
+
+        article {
+            @include articles(var.$color-blue, var.$color-green, var.$font-size)
+        }
+
+        article:nth-child(2),
+        article:nth-child(4) {
+            color: red;
+        }
+    }
+}
+
+section:nth-child(3) {
+    article {
+        color: var.$color-green;
+    }
+}
