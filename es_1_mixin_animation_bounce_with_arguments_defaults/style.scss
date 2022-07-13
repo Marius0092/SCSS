@@ -1,0 +1,23 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin bounce ($start:0px, $mid, $end){
+    animation-name: rimbalzo;
+    animation-duration: 1s;
+    @keyframes rimbalzo{
+        0% { transform: translateY($start);}
+        40%{transform: translateY($mid);}
+        60%{transform: translateY($end);}
+    }    
+}
+.bounce{
+    width: 200px;
+    height: 200px;
+    border-radius: 150px;
+    background-color: rgb(15, 38, 133);
+    @include bounce (0px, -30px, -30px/2 )
+}
